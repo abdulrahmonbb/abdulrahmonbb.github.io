@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Travely</title>
+    <style>
+        .loader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        }
+
+        .loader-circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #3498db;
+        animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+        0% {
+            transform: scale(0.8);
+            opacity: 0.5;
+            }
+        50% {
+            transform: scale(1.2);
+            opacity: 1;
+            }
+        100% {
+            transform: scale(0.8);
+            opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white font-body">
+    <nav class="flex justify-between items-center h-16 md:h-20 px-4 md:px-12 shadow-md">
+        <div>
+            <img src="../src/img/travely.png" alt="Travely logo" class="w-24 md:w-32 lg:w-40">
+        </div>
+        <div class="flex space-x-4 md:space-x-6">
+            <a href="#" class="text-gray-600 hover:text-primary transition-colors">
+                <i class="fa-brands fa-github fa-lg md:fa-2x"></i>
+            </a>
+            <a href="#" class="text-gray-600 hover:text-primary transition-colors">
+                <i class="fa-regular fa-envelope fa-lg md:fa-2x"></i>
+            </a>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen bg-cover bg-center flex items-center justify-center py-12 md:py-20" style="background-image: url('../src/img/shamoon.jpg');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 w-full max-w-4xl px-4 md:px-12 text-center">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight">Uncharted adventures await</h1>
+            <p class="text-lg sm:text-xl md:text-2xl mb-8 md:mb-12 text-gray-200 font-light">Spark your wanderlust with Travely.</p>
+            <form class="bg-white shadow-xl rounded-lg p-4 md:p-6 mb-6 md:mb-8" id="search-form">
+                <div class="flex flex-col md:flex-row md:items-center">
+                    <input 
+                        id="search-input"
+                        class="w-full md:w-3/4 px-4 md:px-6 py-3 md:py-4 text-base md:text-lg text-gray-700 border-2 border-gray-300 rounded-lg md:rounded-r-none focus:outline-none focus:border-primary transition-colors mb-4 md:mb-0"
+                        type="text" 
+                        placeholder="Where do you want to go?"
+                    >
+                    <button 
+                        class="w-full md:w-1/4 px-4 md:px-6 py-3 md:py-4 bg-primary text-white text-base md:text-lg font-semibold rounded-lg md:rounded-l-none hover:bg-text transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                        type="submit"
+                    >
+                        Search
+                    </button>
+                </div>
+            </form>
+            <p class="text-gray-300 text-xs sm:text-sm">Popular: <span class="font-semibold">Paris, Tokyo, New York, Bali</span></p>
+        </div>
+    </section>
+
+    <section id="search-results" class="py-12 md:py-20 bg-gray-100 hidden">
+        <div class="container mx-auto px-4 md:px-12">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">Search Results</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
+                    <img src="../src/img/sample-destination.jpg" alt="Destination" class="w-full h-48 md:h-56 object-cover">
+                    <div class="p-4 md:p-6">
+                        <h3 class="text-lg md:text-xl font-semibold mb-2 md:mb-3">Destination Name</h3>
+                        <p class="text-sm md:text-base text-gray-600 mb-3 md:mb-4 leading-relaxed">A brief description of the destination, highlighting key features or attractions.</p>
+                        <a href="#" class="text-primary hover:text-text font-semibold transition-colors text-sm md:text-base">Learn More</a>
+                    </div>
+                </div>
+                <!-- Repeat the card structure for more results -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-primary text-white py-8 md:py-12">
+        <div class="container mx-auto px-4 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <div>
+                    <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">About Travely</h3>
+                    <p class="text-sm md:text-base text-gray-300 leading-relaxed">Discover the world with Travely, your ultimate travel companion.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">Quick Links</h3>
+                    <ul class="space-y-1 md:space-y-2">
+                        <li><a href="#" class="text-sm md:text-base text-gray-300 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="text-sm md:text-base text-gray-300 hover:text-white transition-colors">Destinations</a></li>
+                        <li><a href="#" class="text-sm md:text-base text-gray-300 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-sm md:text-base text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors"><i class="fab fa-instagram fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../src/index.js"></script>
+</body>
+</html>
